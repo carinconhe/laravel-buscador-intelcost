@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/','InterCost@index')->name('index');
+Route::post('/ajaxRequest/exe/', 'InterCost@ajaxRequestPost')->name('ajaxRequest.post');

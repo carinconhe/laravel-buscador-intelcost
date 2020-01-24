@@ -11,6 +11,11 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Formulario</title>
+  <script>
+        let ajaxUrl = "{{ url('/') }}";
+  </script>
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body>
@@ -27,17 +32,14 @@
             <h5>Filtros</h5>
           </div>
           <div class="filtroCiudad input-field">
+            
             <p><label for="selectCiudad">Ciudad:</label><br></p>
-            <select name="ciudad" id="selectCiudad">
-              <option value="" selected>Elige una ciudad</option>
-            </select>
+            {!! Form::select('selectCiudad', $cities,0,['id' => 'selectCiudad']) !!}
           </div>
           <div class="filtroTipo input-field">
             <p><label for="selecTipo">Tipo:</label></p>
             <br>
-            <select name="tipo" id="selectTipo">
-              <option value="">Elige un tipo</option>
-            </select>
+            {!! Form::select('selectTipo', $types,3,['id' => 'selectTipo']) !!}
           </div>
           <div class="filtroPrecio">
             <label for="rangoPrecio">Precio:</label>
@@ -57,8 +59,31 @@
       <div id="tabs-1">
         <div class="colContenido" id="divResultadosBusqueda">
           <div class="tituloContenido card" style="justify-content: center;">
-            <h5>Resultados de la búsqueda:</h5>
-            <div class="divider"></div>
+            <h5>Resultados de la búsqueda: <span id="count"></span></h5>
+            
+            <div id="results" class="row row-cols-1">
+              @foreach ($items as $item)
+                <article class="itemMostrado col-lg-4 col-md-6 col-12">
+                  <div class="content-item p-1">
+                      <figure>
+                        <img class="img-fluid" src="{{ url('assest/img/home.jpg') }}" />
+                      </figure>
+                  </div>
+                  <div class="info">
+                    
+                    <p>
+                      Dirección: {{$item['Direccion']}}<br>
+                      Ciudad: {{$item['Ciudad']}}<br>
+                      Teléfono: {{$item['Telefono']}}<br>
+                      Código postal: {{$item['Codigo_Postal']}}<br>
+                      Tipo: {{$item['Tipo']}}<br>
+                      Precio: {{$item['Precio']}}
+                  </p>
+                  </div>
+                </article>
+                <div class="divider"></div>
+              @endforeach
+            </div>
           </div>
         </div>
       </div>

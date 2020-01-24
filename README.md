@@ -1,3 +1,81 @@
+# Laravel-Intelcost-Buscarod
+#### Camilo Rincón
+#### email carincon@gmail.com
+#### Teléfono de contacto: 3203443989
+
+Este repositorio fue creado para prueba de intelcost:
+
+- PHP version 7.2.20
+- MySql 5.7.26
+- Laravel 6.10.1
+- Servidor Web ninx/1.17.1
+
+En el archivo de settings.php se encuentra la confgiuracion de la base de datos, de igual manera se daja una copia de la base de datos en la siguiente ruta del repositorio:
+
+### Url configurada localmente, se creo un virtual host.
+```sh
+http://intercost.lcal/
+```
+### Configuración
+Una vez se descarga el proyecto de git, es importante tener instalado composer para realizar la instalación
+
+`$ composer install`
+
+`php artisan key:generate`
+
+El Archivo de .env viene la configuración de una base de datos, como no se almacena ninguna información solo se dejo configurado la preterminada.
+
+```bash
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:edRD/Ipzf5JM/9S6KA/YyUXDYXBMVzKog0KlUjwYFSg=
+APP_DEBUG=true
+APP_URL=http://intercost.lcal
+
+LOG_CHANNEL=stack
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=mysql
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### Archivos importantes y rutas
+Laravel el path apunta a la siguientes carpeta, en esta carpeta se tiene que aputar document root, esta carpeta encuentra los assets como lo son js y css
+```bash
+/Sites/buscador-intelcost/public
+```
+#### Controlladores
+Los controladores se encuentran en las siguientes carpeta:
+```bash
+/Sites/buscador-intelcost/app/Http/Controllers
+```
+#### Vista
+Laravel esta configurado por defecto con blade que es un framework  para manejo de templates, los archivos html se encuentran en las siguientes carpeta:
+```bash
+/Sites/buscador-intelcost/resources/views
+```
+
+### Componentes
+
+Se agragaron los siguientes componentes.
+
+| Complementos | README |
+| ------ | ------ |
+| guzzlehttp/guzzle |[packagist](https://packagist.org/packages/guzzlehttp/guzzle) |
+|Blade Templates|[https://laravel.montogeek.com/5.1/blade]|
+
+
+
+License
+----
+
+MIT
+
+
+**Free Software, Hell Yeah!**
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
